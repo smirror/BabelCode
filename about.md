@@ -1,4 +1,8 @@
-# Yu SATO(smirror/Libra_A)
-## Language
-- JP(mother language)
+# About
+## Yu SATO(smirror/Libra_A)
+### LANGUAGE
+- JP(Mother language)
 - EN
+- Python3
+### EDUCATION
+### EXPERIENCE
