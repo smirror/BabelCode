@@ -7,5 +7,7 @@
 
 
 ### EDUCATION
-
+- Shizuoka University
+- Department of Mathematical and Systems Engineering, Faculty of Engineering, Shizuoka University 
+- koriyama highschool（at Fukushima Pefecture）
 ### EXPERIENCE
