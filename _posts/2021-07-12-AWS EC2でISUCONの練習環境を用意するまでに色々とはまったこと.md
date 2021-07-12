@@ -107,8 +107,8 @@ ssh -i hoge.pem ubuntu@[IPv4 パブリック IP]
 sudo su -
 # ${USERNAME} を作る。${USERNAME}は適当なユーザー名を入力してください
 useradd -m ${USERNAME}
-sudo usermod -aG root ${USERNAME}
 cd /home/${USERNAME}
+su - ${USERNAME}
 mkdir .ssh
 curl https://github.com/${USERNAME}.keys > .ssh/authorized_keys
 chmod 700 /home/${USERNAME}/.ssh/
