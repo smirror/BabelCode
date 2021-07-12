@@ -107,7 +107,7 @@ ssh -i hoge.pem ubuntu@[IPv4 パブリック IP]
 sudo su -
 # ${USERNAME} を作る。${USERNAME}は適当なユーザー名を入力してください
 useradd -m ${USERNAME}
-sudo usermod -aG sudo ${USERNAME}
+sudo usermod -aG root ${USERNAME}
 cd /home/${USERNAME}
 mkdir .ssh
 curl https://github.com/${USERNAME}.keys > .ssh/authorized_keys
@@ -117,7 +117,7 @@ chmod 600 /home/${USERNAME}/.ssh/authorized_keys
 
 因みに味噌なのは、ssh-keygenを使わず、GIthubに公開されている鍵を使う点です。これで、秘密鍵を各自作って貰って、共有するという作業は原則必要なくなります。
 
-またユーザー追加後に、各自にsudoコマンドが利用できるようにグループに追加していますが、Debianの場合は、sudoグループ。CentOSの場合はwheelグループになるので注意。
+またユーザー追加後に、各自にsudoコマンドが利用できるようにグループに追加しています。
 
 この後は
 
