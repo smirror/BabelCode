@@ -106,9 +106,11 @@ ssh -i hoge.pem ubuntu@[IPv4 パブリック IP]
 # root化
 sudo su -
 # ${USERNAME} を作る。${USERNAME}は適当なユーザー名を入力してください
-useradd -d /home/isucon -m ${USERNAME}
+useradd -m ${USERNAME}
 sudo usermod -aG sudo ${USERNAME}
-curl https://github.com/${USERNAME}.keys > authorized_keys
+cd /home/${USERNAME}
+mkdir .ssh
+curl https://github.com/${USERNAME}.keys > .ssh/authorized_keys
 chmod 700 /home/${USERNAME}/.ssh/
 chmod 600 /home/${USERNAME}/.ssh/authorized_keys
 ```
