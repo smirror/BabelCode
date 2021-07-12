@@ -100,7 +100,7 @@ AWSトップページに「AWSアカウントを作成」ボタンがあるの�
 ssh -i hoge.pem ubuntu@[IPv4 パブリック IP]
 ```
 
-次に、[https://gist.github.com/kyfk/b7d47ac8f8a1cfcce619862d94599201](https://www.notion.so/b7d47ac8f8a1cfcce619862d94599201) こちらの記事を参照しつつ、ユーザーを作成していきます。
+次に、[https://gist.github.com/kyfk/b7d47ac8f8a1cfcce619862d94599201](https://gist.github.com/kyfk/b7d47ac8f8a1cfcce619862d94599201) こちらの記事を参照しつつ、ユーザーを作成していきます。
 
 ```bash
 # root化
