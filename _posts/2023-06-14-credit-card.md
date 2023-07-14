@@ -226,4 +226,5 @@
 ## 参考資料
 
 - **[あなたの知らない!クレジットカード社会の真実―実務にも役立つ「実用知識百科」](https://www.amazon.co.jp/%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84-%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E7%A4%BE%E4%BC%9A%E3%81%AE%E7%9C%9F%E5%AE%9F%E2%80%95%E5%AE%9F%E5%8B%99%E3%81%AB%E3%82%82%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%80%8C%E5%AE%9F%E7%94%A8%E7%9F%A5%E8%AD%98%E7%99%BE%E7%A7%91%E3%80%8D-%E6%9C%AB%E8%97%A4-%E9%AB%98%E7%BE%A9/dp/4865560297/ref=sr_1_1?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&keywords=%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E7%A4%BE%E4%BC%9A%E3%81%AE%E7%9C%9F%E5%AE%9F&linkCode=qs&qid=1686725497&sourceid=Mozilla-search&sr=8-1)**
+
 - **[クレジットカード事業の歴史から検証するコア業務とリスクマネジメント](https://amzn.asia/d/2xFupMS)**
