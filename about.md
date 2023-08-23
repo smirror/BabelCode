@@ -3,11 +3,29 @@
 ### LANGUAGE
 - JP(Mother language)
 - EN
-- Python3
 
+### SKILL
+- LANG
+  - Python3
+  - Go
+  - Rust
+  - C/C++
+  - Java
+
+- Docker
+- K8s
+
+- DB
+  - MySQL
+  - Oracle
+  - Cassandra
+
+- Redis
+
+### EXPERIENCE
+- Yahoo! JAPAN(2022/02 -- now)
 
 ### EDUCATION
-- Shizuoka University
-- Department of Mathematical and Systems Engineering, Faculty of Engineering, Shizuoka University 
-- koriyama highschool（at Fukushima Pefecture）
-### EXPERIENCE
+- Shizuoka University(2015--2022)
+  - Master of Computer Science, Shizuoka University 
+  - Department of Mathematical and Systems Engineering, Faculty of Engineering, Shizuoka University 
