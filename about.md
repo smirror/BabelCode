@@ -23,7 +23,7 @@
 - Redis
 
 ### EXPERIENCE
-- Yahoo! JAPAN(2022/02 -- now)
+- LY Corporation / Yahoo! JAPAN(2022/02 -- now)
 
 ### EDUCATION
 - Shizuoka University(2015--2022)
