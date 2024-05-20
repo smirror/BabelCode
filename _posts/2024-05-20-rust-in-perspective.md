@@ -1,6 +1,6 @@
 # [Rust in Perspective](https://people.kernel.org/linusw/rust-in-perspective)要約
 
-ChatGPT-4oによる要約です。
+[Rust in Perspective](https://people.kernel.org/linusw/rust-in-perspective)のChatGPT-4oによる要約です。
 
 ### RustをLinuxカーネルに導入する理由
 - Rustはプログラミング言語の抽象化レベルを上げ、コンピュータサイエンスとソフトウェアエンジニアリングを統合することを目指している。
