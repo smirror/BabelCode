@@ -1,4 +1,4 @@
-#  How the Graphical User Interface Was Invented 
+#  「マウスとメニュー：ユーザーフレンドリーなインターフェースのデザイン」の要約
 
 https://spectrum.ieee.org/graphical-user-interface の要約
 
