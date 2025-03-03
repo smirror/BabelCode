@@ -223,6 +223,8 @@
 - 資料（日本語在り）
   - [https://www.pcisecuritystandards.org/document_library/](https://www.pcisecuritystandards.org/document_library/)
 
+https://scan.netsecurity.ne.jp/article/2009/06/23/23894.html
+
 ## 3Dセキュア
 
 こちらを読みましょう
