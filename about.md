@@ -24,6 +24,7 @@
 
 ### EXPERIENCE
 - LY Corporation / Yahoo! JAPAN(2022/02 -- now)
+  - Backend Engineer about the card payment system in PayPay
 
 ### EDUCATION
 - Shizuoka University(2015--2022)
