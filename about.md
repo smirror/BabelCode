@@ -10,7 +10,8 @@
   - Go
   - Rust
   - C/C++
-  - Java
+  - Java (SpringBoot)
+  - TypeScript(React)
 
 - Docker
 - K8s
