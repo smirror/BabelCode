@@ -22,8 +22,10 @@
 
 - Redis
 
+- Ansible
+
 ### EXPERIENCE
-- LY Corporation / Yahoo! JAPAN(2022/02 -- now)
+- LY Corporation / Yahoo! JAPAN(2022/02 -- 2025/04)
   - Backend Engineer about the card payment system in PayPay
 
 ### EDUCATION
