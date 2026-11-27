@@ -35,14 +35,6 @@ jobs:
           chmod +x "$executable"
           test "$("$executable" --version)" = "$version"
           dirname "$executable" >> "$GITHUB_PATH"
-      - name: Generate mature pnpm lockfile (migration PR only)
-        if: github.event_name == 'pull_request'
-        run: |
-          pnpm install --lockfile-only --no-frozen-lockfile
-          test -s pnpm-lock.yaml
-          echo PNPM_LOCK_BEGIN
-          base64 -w 1000 pnpm-lock.yaml
-          echo PNPM_LOCK_END
       - run: pnpm install --frozen-lockfile
       - name: Check runtime
         run: deno --version
