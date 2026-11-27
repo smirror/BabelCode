@@ -1,0 +1,35 @@
+name: Jekyll security and build
+on:
+  pull_request:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+  pages: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      BUNDLE_FROZEN: "true"
+      JEKYLL_ENV: production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@145243922b4465b78e04dd66294782c7de45901f
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Verify security floors
+        run: |
+          bundle exec ruby -e 'require "bundler/setup"; {"activesupport"=>"7.2.3.1", "rubyzip"=>"3.4.0", "nokogiri"=>"1.19.5"}.each { |name, version| abort("#{name} is below #{version}") if Gem.loaded_specs.fetch(name).version < Gem::Version.new(version) }'
+      - name: Build Jekyll
+        env:
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_GITHUB_TOKEN: ${{ github.token }}
+        run: bundle exec jekyll build --trace
+      - name: Verify site outputs
+        run: |
+          test -s _site/index.html
+          test -s _site/feed.xml
