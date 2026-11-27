@@ -53,3 +53,5 @@ The Pages deployment job runs only on master / manual dispatch on master, never 
 ## Dependency maintenance
 
 Keep pnpm-lock.yaml committed. Deno uses the pnpm-installed node_modules in manual mode; pnpm is the sole dependency resolver, so no deno.lock or package-lock.json is used. CI uses pnpm install --frozen-lockfile and executes tests and Astro explicitly with Deno. Dependabot checks pnpm dependencies using its npm ecosystem and GitHub Actions. Review dependency updates and the static build before merging.
+
+All newly resolved direct and transitive dependencies must have been published at least 72 hours ago. The pnpm workspace enforces the age strictly, including rejecting missing registry timestamps; no exceptions are configured. Dependabot version-update PRs also have a three-day cooldown (security PRs can still be opened immediately, but must pass the same dependency-age policy before adoption). Do not bypass the age policy or regenerate the lockfile during normal CI.
