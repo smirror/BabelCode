@@ -1,0 +1,6 @@
+---
+import Site from '../layouts/Site.astro';
+import { Content } from '../../about.md';
+import { sitePath } from '../lib/paths.mjs';
+---
+<Site title="About" section="About" canonical={sitePath('about.html')}><article class="prose"><Content /></article></Site>

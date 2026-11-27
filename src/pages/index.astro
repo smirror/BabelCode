@@ -1,0 +1,20 @@
+---
+import Site from '../layouts/Site.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../lib/posts';
+import { sitePath } from '../lib/paths.mjs';
+const posts = await getPosts();
+---
+<Site canonical={sitePath()}>
+  <section class="hero">
+    <p class="eyebrow">An independent personal site / Est. 2020</p>
+    <h1>Bibliophile at<br/><em>Babel Code.</em></h1>
+    <p>技術、読書、学習の記録。そして、考えたことを形にする実験室。</p>
+  </section>
+  <div class="portal">
+    <a href={sitePath('blog.html')}><span>01 / Writing</span><h2>Essays &amp; notes</h2><p>技術記事・書評・読書記録</p><span class="more">記事を読む →</span></a>
+    <a href={sitePath('library.html')}><span>02 / Library</span><h2>Study &amp; reference</h2><p>教材・書庫・生成済みドキュメント</p><span class="more">書庫を見る →</span></a>
+    <a href={sitePath('lab.html')}><span>03 / Laboratory</span><h2>Experiments</h2><p>可視化・シミュレーション・Web実験</p><span class="more">実験室へ →</span></a>
+  </div>
+  <section class="recent"><div class="section-head"><h2>Recent writing</h2><a href={sitePath('blog.html')}>All articles →</a></div><PostList posts={posts.slice(0, 5)} /></section>
+</Site>

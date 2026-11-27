@@ -1,0 +1,11 @@
+---
+import Site from '../layouts/Site.astro';
+import library from '../../content/library.json';
+import { sitePath, encodePath } from '../lib/paths.mjs';
+---
+<Site title="Library" section="Library" canonical={sitePath('library.html')}>
+  <p class="eyebrow">02 / Library</p><h1 class="page-title">Library</h1>
+  <p class="intro">数学・物理・コンピュータ科学の教材や、独立して閲覧できるドキュメント。</p>
+  {library.length === 0 ? <p class="empty">公開済みの教材はまだありません。</p> :
+    <ul class="artifact-list">{library.map(item => <li><p class="eyebrow">{item.format.toUpperCase()} / {item.published}</p><h2><a href={sitePath(encodePath(item.path))}>{item.title}</a></h2><p>{item.description}</p><small>Revision: {item.sourceRevision.slice(0, 12)}</small></li>)}</ul>}
+</Site>

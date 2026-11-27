@@ -1,0 +1,21 @@
+---
+import Site from '../layouts/Site.astro';
+import { getPosts } from '../lib/posts';
+import { sitePath } from '../lib/paths.mjs';
+export async function getStaticPaths() {
+  return (await getPosts()).map(post => ({ params: { path: post.route }, props: { post } }));
+}
+const { post } = Astro.props;
+const Content = post.Content;
+const headings = post.headings.filter(h => h.depth >= 2 && h.depth <= 3);
+---
+<Site title={post.title} section="Writing" canonical={post.href}>
+  <div class="article-nav"><a href={sitePath('blog.html')}>← Writing</a><span>{post.category}</span><time datetime={post.date}>{post.date}</time></div>
+  <div class="reading-grid">
+    <article class="prose">
+      {!post.headings.some(h => h.depth === 1) && <h1>{post.title}</h1>}
+      <Content />
+    </article>
+    {headings.length > 2 && <aside class="toc"><nav aria-label="目次"><p>ON THIS PAGE</p><ul>{headings.map(h => <li class:list={[h.depth === 3 && 'subheading']}><a href={'#' + h.slug}>{h.text}</a></li>)}</ul></nav></aside>}
+  </div>
+</Site>
