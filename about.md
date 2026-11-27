@@ -11,8 +11,9 @@
   - Rust
   - C/C++
   - Java (SpringBoot)
-  - TypeScript(React)
+  - TypeScript (React, Next.js)
 
+- GraphQL
 - Docker
 - K8s
 
@@ -24,8 +25,12 @@
 - Redis
 
 - Ansible
+- Firebase, Google Analytics 4, BigQuery, Looker
 
 ### EXPERIENCE
+- LayerX (seconded to Mitsui & Co. Digital Asset Management) — Present
+  - Software Engineer
+  - Current stack: Go, TypeScript, React, Next.js, GraphQL, MySQL, Firebase, GA4, BigQuery, Looker
 - LY Corporation / Yahoo! JAPAN(2022/02 -- 2025/04)
   - Backend Engineer about the card payment system in PayPay
 
