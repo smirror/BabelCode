@@ -11,7 +11,8 @@ const blog = text('blog.html'), feed = text('feed.xml');
 let count = 0;
 for (const name of readdirSync('_posts').filter(n => n.endsWith('.md'))) {
   const source = readFileSync('_posts/' + name, 'utf8');
-  if (/^---\r?\n[\s\S]*?^published:\s*false\s*$/m.test(source)) continue;
+  const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] ?? '';
+  if (/^published:\s*false\s*$/m.test(frontmatter)) continue;
   const { route } = legacyRoute(name);
   const file = route + '.html';
   const html = text(file);
