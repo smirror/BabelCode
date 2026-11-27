@@ -1,0 +1,9 @@
+---
+const { posts } = Astro.props;
+---
+<ul class="post-list">
+  {posts.map(post => <li data-post data-search={post.title + ' ' + post.category + ' ' + post.body}>
+    <time datetime={post.date}>{post.date}</time>
+    <div><a href={post.href}>{post.title}</a><span class="post-category">{post.category}</span></div>
+  </li>)}
+</ul>

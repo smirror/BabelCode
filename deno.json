@@ -1,0 +1,11 @@
+{
+  "nodeModulesDir": "manual",
+  "lock": false,
+  "tasks": {
+    "dev": "deno run -A ./node_modules/astro/bin/astro.mjs dev",
+    "build": "deno run -A scripts/check-artifacts.mjs && deno run -A ./node_modules/astro/bin/astro.mjs build && deno run -A scripts/verify-site.mjs",
+    "preview": "deno run -A ./node_modules/astro/bin/astro.mjs preview",
+    "test": "deno test -A tests/",
+    "test:library": "deno run -A scripts/smoke-library.mjs"
+  }
+}

@@ -1,0 +1,5 @@
+---
+import Site from '../layouts/Site.astro';
+import { sitePath } from '../lib/paths.mjs';
+---
+<Site title="Not found" canonical={sitePath('404.html')}><h1 class="page-title">404 / Not found</h1><p>ページが見つかりませんでした。</p><a href={sitePath()}>トップページへ戻る</a></Site>

@@ -1,0 +1,61 @@
+name: Astro Pages
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: astro-pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
+        with:
+          deno-version: v2.9.8
+      - name: Install pinned native pnpm
+        shell: bash
+        run: |
+          version=12.23.0
+          test "$(deno eval 'console.log(JSON.parse(Deno.readTextFileSync("package.json")).packageManager)')" = "pnpm@$version"
+          archive="$RUNNER_TEMP/pnpm.tar.gz"
+          mkdir -p "$RUNNER_TEMP/pnpm-native"
+          curl --fail --silent --show-error --location --retry 3 "https://github.com/pnpm/pnpm/releases/download/v$version/pnpm-linux-x64.tar.gz" -o "$archive"
+          echo "b515e29f2ac1adc0fbe63173414a6682827baff24f17e7ad3476821bdef236ac  $archive" | sha256sum --check
+          tar -xzf "$archive" -C "$RUNNER_TEMP/pnpm-native"
+          executable="$(find "$RUNNER_TEMP/pnpm-native" -type f -name pnpm -print -quit)"
+          test -n "$executable"
+          chmod +x "$executable"
+          test "$("$executable" --version)" = "$version"
+          dirname "$executable" >> "$GITHUB_PATH"
+      - run: pnpm install --frozen-lockfile
+      - name: Check runtime
+        run: deno --version
+      - run: deno task test
+      - name: Test generated HTML integration
+        run: deno task test:library
+      - run: deno task build
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

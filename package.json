@@ -1,0 +1,20 @@
+{
+  "name": "babelcode",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "pnpm": "12.23.0",
+    "deno": ">=2.9.8 <3"
+  },
+  "scripts": {
+    "dev": "deno task dev",
+    "build": "deno task build",
+    "preview": "deno task preview",
+    "test": "deno task test"
+  },
+  "dependencies": {
+    "astro": "7.4.13"
+  },
+  "packageManager": "pnpm@12.23.0"
+}

@@ -1,0 +1,11 @@
+packages:
+  - .
+
+# Only the optional macOS filesystem watcher is allowed to run build scripts.
+allowBuilds:
+  fsevents: true
+
+# Quarantine new registry versions for 72 hours, including transitive dependencies.
+minimumReleaseAge: 4320
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
