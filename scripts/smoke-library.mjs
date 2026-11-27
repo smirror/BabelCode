@@ -1,6 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { execFileSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 
 const manifest = 'content/library.json';
@@ -18,7 +17,8 @@ try {
     sha256: createHash('sha256').update(bytes).digest('hex'),
     sourceRevision: '0'.repeat(40), published: '2026-11-28',
   }]));
-  execFileSync('pnpm', ['run', 'build'], { stdio: 'inherit' });
+  const status = await new Deno.Command(Deno.execPath(), { args: ['task', 'build'], stdin: 'inherit', stdout: 'inherit', stderr: 'inherit' }).spawn().status;
+  assert.ok(status.success, 'Deno build failed');
   assert.deepEqual(readFileSync('dist/library/memex/__ci_fixture.html'), bytes);
   assert.ok(readFileSync('dist/library.html', 'utf8').includes('/BabelCode/library/memex/__ci_fixture.html'));
   console.log('Synthetic memex-format artifact copied byte-for-byte and linked successfully.');

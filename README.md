@@ -1,17 +1,17 @@
 # BabelCode
 
-A static personal site for writing, a library of generated documents, and web experiments. Astro, TypeScript, plain CSS; no Ruby, database or runtime server.
+A static personal site for writing, a library of generated documents, and web experiments. Astro, Deno, TypeScript, plain CSS; no Ruby, Node.js runtime, database or runtime server.
 
 ## Development
 
-Install Node.js 24 LTS and pnpm 10.34.9 (pinned in package.json), then run:
+Install Deno 2.9.8 and the native pnpm 12.23.0 executable (pinned in package.json). No separate Node.js installation is required. Then run:
 
     pnpm install --frozen-lockfile
-    pnpm run dev
+    deno task dev
 
-    pnpm test
-    pnpm run build
-    pnpm run preview
+    deno task test
+    deno task build
+    deno task preview
 
 The development/preview URL includes /BabelCode/. The production build is dist/.
 
@@ -52,4 +52,4 @@ The Pages deployment job runs only on master / manual dispatch on master, never 
 
 ## Dependency maintenance
 
-Keep pnpm-lock.yaml committed; CI uses pnpm install --frozen-lockfile. Dependabot checks pnpm dependencies using its npm ecosystem and GitHub Actions. Review dependency updates and the static build before merging.
+Keep pnpm-lock.yaml committed. Deno uses the pnpm-installed node_modules in manual mode; pnpm is the sole dependency resolver, so no deno.lock or package-lock.json is used. CI uses pnpm install --frozen-lockfile and executes tests and Astro explicitly with Deno. Dependabot checks pnpm dependencies using its npm ecosystem and GitHub Actions. Review dependency updates and the static build before merging.
