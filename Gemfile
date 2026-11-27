@@ -21,7 +21,7 @@ end
 gem "jekyll-github-metadata"
 
 # Security floor for the transitive dependency used by html-pipeline.
-gem "activesupport", "~> 7.2.3.1", require: false
+gem "activesupport", "~> 8.0.5.2", require: false
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
