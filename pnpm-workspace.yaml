@@ -1,0 +1,6 @@
+packages:
+  - .
+
+# Only this optional macOS filesystem watcher may run dependency build scripts.
+onlyBuiltDependencies:
+  - fsevents

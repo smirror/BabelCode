@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=24 <25"
+    "node": ">=24 <25",
+    "pnpm": "10.34.9"
   },
   "scripts": {
     "dev": "astro dev",
@@ -14,5 +15,6 @@
   },
   "dependencies": {
     "astro": "7.4.13"
-  }
+  },
+  "packageManager": "pnpm@10.34.9"
 }

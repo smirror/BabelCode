@@ -18,7 +18,7 @@ try {
     sha256: createHash('sha256').update(bytes).digest('hex'),
     sourceRevision: '0'.repeat(40), published: '2026-11-28',
   }]));
-  execFileSync('npm', ['run', 'build'], { stdio: 'inherit' });
+  execFileSync('pnpm', ['run', 'build'], { stdio: 'inherit' });
   assert.deepEqual(readFileSync('dist/library/memex/__ci_fixture.html'), bytes);
   assert.ok(readFileSync('dist/library.html', 'utf8').includes('/BabelCode/library/memex/__ci_fixture.html'));
   console.log('Synthetic memex-format artifact copied byte-for-byte and linked successfully.');

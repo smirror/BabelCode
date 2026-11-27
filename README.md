@@ -4,14 +4,14 @@ A static personal site for writing, a library of generated documents, and web ex
 
 ## Development
 
-Install Node.js 24 LTS, then run:
+Install Node.js 24 LTS and pnpm 10.34.9 (pinned in package.json), then run:
 
-    npm ci
-    npm run dev
+    pnpm install --frozen-lockfile
+    pnpm run dev
 
-    npm test
-    npm run build
-    npm run preview
+    pnpm test
+    pnpm run build
+    pnpm run preview
 
 The development/preview URL includes /BabelCode/. The production build is dist/.
 
@@ -52,4 +52,4 @@ The Pages deployment job runs only on master / manual dispatch on master, never 
 
 ## Dependency maintenance
 
-Keep package-lock.json committed; CI uses npm ci. Dependabot checks npm and GitHub Actions. Review dependency updates and the static build before merging.
+Keep pnpm-lock.yaml committed; CI uses pnpm install --frozen-lockfile. Dependabot checks pnpm dependencies using its npm ecosystem and GitHub Actions. Review dependency updates and the static build before merging.
