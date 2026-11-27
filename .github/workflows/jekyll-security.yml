@@ -5,6 +5,7 @@ on:
     branches: [master]
 permissions:
   contents: read
+  pages: read
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -24,6 +25,9 @@ jobs:
         run: |
           bundle exec ruby -e 'require "bundler/setup"; {"activesupport"=>"7.2.3.1", "rubyzip"=>"3.4.0", "nokogiri"=>"1.19.5"}.each { |name, version| abort("#{name} is below #{version}") if Gem.loaded_specs.fetch(name).version < Gem::Version.new(version) }'
       - name: Build Jekyll
+        env:
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_GITHUB_TOKEN: ${{ github.token }}
         run: bundle exec jekyll build --trace
       - name: Verify site outputs
         run: |
